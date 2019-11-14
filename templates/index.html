@@ -1,0 +1,163 @@
+
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <title>Add Employee</title>
+  </head>
+  <body>
+  
+  
+	<!--<h1>Hello {{ message }}!</h1>
+    <h1 style="text-align:center"><img src="img/logo2.png" alt="Paris" class="center"></h1>-->
+	<h1 style="text-align:center" >Add Employee</h1>
+	<!--from-->
+	
+	<div class="container">
+
+
+
+
+	
+		<form  action="{{ url_for('insert') }}"  method="POST">
+			<!-- <div class="form-row">
+				<div class="form-group col-md-">
+				  <label for="EmployeeID">Employee ID</label>
+				  <input type="text" class="form-control" id="EmployeeID" placeholder="Employee ID" name="EmployeeID">
+				</div>
+				<div class="form-group col-md-6">
+				  <label for="nationalId">National ID</label>
+				  <input type="text" class="form-control" id="nationalId" placeholder="National ID" name="nationalId">
+				</div>
+			  </div>-->
+
+
+			
+			  <div class="form-row">
+				<div class="form-group col-md-6">
+				  <label for="FirstName">First Name</label>
+				  <input type="text" class="form-control" id="FirstName" placeholder="First Name" name="FirstName">
+				</div>
+				<div class="form-group col-md-6">
+				  <label for="LastName">Last Name</label>
+				  <input type="text" class="form-control" id="LastName"  placeholder="Last Name" name="LastName">
+				</div>
+			  </div>
+			  
+			  
+			   <div class="form-row">
+				<div class="form-group col-md-6">
+				  <label for="FatherName">Father Name</label>
+				  <input type="text" class="form-control" id="FatherName" placeholder="Father Name" name="FatherName">
+				</div>
+				<div class="form-group col-md-6">
+				  <label for="MotherName">Mother Name</label>
+				  <input type="text" class="form-control" id="MotherName" placeholder="Mother Name" name="MotherName">
+				</div>
+			  </div>
+			  
+			   <div class="form-row">
+				<div class="form-group col-md-6">
+				  <label for="Age">Age</label>
+				  <input type="text" class="form-control" id="Age" placeholder="Age" name="Age">
+				</div>
+				<div class="form-group col-md-6">
+				  <label for="Sex">Sex</label>
+				  <input type="text" class="form-control" id="Sex" placeholder="Sex" name="Sex">
+				</div>
+			  </div>
+			  
+			   <div class="form-row">
+				<div class="form-group col-md-6">
+				  <label for="Position">Position</label>
+				  <input type="text" class="form-control" id="Position" placeholder="Position" name="Position">
+				</div>
+				<div class="form-group col-md-6">
+				  <label for="EmailAddress">Email Address</label>
+				  <input type="text" class="form-control" id="EmailAddress" placeholder="Email Address" name="EmailAddress">
+				</div>
+			  </div>
+			  
+
+
+			<div class="form-row">
+
+				<div class="form-group col-md-6">
+				  <label for="joiningDate">Joining Date</label>
+				  <input type="date" class="form-control" id="joiningDate" placeholder="Joining Date" name="joiningDate">
+				</div>
+						<!--NID-->
+				<div class="form-group col-md-6">
+				  <label for="NIDNumber">NID Number</label>
+				  <input type="text" class="form-control" id="NIDNumber" placeholder="NID Number" name="NIDNumber">
+				</div>
+			  </div>
+
+
+			<div class="form-row">
+
+				<div class="form-group col-md-6">
+				  <label for="PhoneNumber">Phone Number</label>
+				  <input type="text" class="form-control" id="PhoneNumber" placeholder="Phone Number" name="PhoneNumber">
+				</div>
+
+				<div class="form-group col-md-6">
+				  <label for="emergencyPhoneNumber">Emergency Phone Number</label>
+				  <input type="text" class="form-control" id="emergencyPhoneNumber" placeholder="Emergency Phone Number" name="emergencyPhoneNumber">
+				</div>
+
+
+			  </div>
+
+
+
+
+			<div class="form-row">
+
+				<!--bank name-->
+				<div class="form-group col-md-6">
+				  <label for="BankName">Bank Name</label>
+				  <input type="text" class="form-control" id="BankName" placeholder="Bank Name" name="BankName">
+				</div>
+
+				<div class="form-group col-md-6">
+				  <label for="BankAccountNumber">Bank Account Number</label>
+				  <input type="text" class="form-control" id="BankAccountNumber" placeholder="Bank Account Number" name="BankAccountNumber">
+				</div>
+			  </div>
+			  
+			  <div class="form-group">
+				<label for="PresentAddress">Present Address</label>
+				<input type="text" class="form-control" id="PresentAddress" placeholder="Present Address" name="PresentAddress">
+			  </div>
+			  <div class="form-group">
+				<label for="PermanentAddress">Permanent Address</label>
+				<input type="text" class="form-control" id="PermanentAddress" placeholder="Permanent Address" name="PermanentAddress">
+			  </div>
+			 
+			 
+			<button type="submit" class="btn btn-primary">Submit</button>
+		</form>
+			
+			<br><br><br>
+	
+	</div>
+	
+	<!--from-->
+	
+	
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  </body>
+</html>
