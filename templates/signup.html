@@ -12,14 +12,15 @@
   </head>
   <body>
 			<div class="container">
+				<br> <br>
 			  <div class="row">
 				<div class="col-md-4">
 				
 				</div>
-				<div class="col-md-4">
+				<div class="col-md-4 card" style="padding:10px">
 						<!--main login from-->
 						
-							<h1 style="text-align:center">Sign up</h1>
+							<h1 style="text-align:center">Sign Up</h1>
 							<form  action="{{ url_for('signup') }}" method="POST">
 							  <div class="form-group">
 								<label for="UserName">User Name</label>
@@ -39,10 +40,12 @@
 								<label for="Password2">Confirm Password</label>
 								<input type="password" class="form-control" id="Password2" name="PasswordTwo" placeholder="Password">
 								  <br>
-								<div class="" role="alert">{{massage}}</div>
+								<div class="Signup" role="alert">{{massage}}</div>
 							  </div>
 
-							  <button type="submit" class="btn btn-primary">Submit</button>
+							  <div class="text-center">
+									 <button type="submit" class="btn btn-success btn-lg">Sign Up</button>
+							  </div>
 							</form>
 						<!--main-->
 				</div>

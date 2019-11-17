@@ -8,18 +8,21 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
-    <title>Hello, world!</title>
+    <title>Log In</title>
   </head>
   <body>
 			<div class="container">
+			  <br>
 			  <div class="row">
 				<div class="col-md-4">
 				
 				</div>
-				<div class="col-md-4">
+
+
+				<div class="col-md-4 card" style="padding:10px" >
 						<!--main login from-->
 
-							<h1 style="text-align:center">login</h1>
+							<h1 style="text-align:center">Log In</h1>
 							<form action="{{ url_for('login') }}" method="POST">
 							  <div class="form-group">
 								<label for="exampleInputEmail1">Email address</label>
@@ -33,8 +36,15 @@
 								 <div class="" role="alert">{{nmessage}}</div>
 							  </div>
 							  
-							  <button type="submit" class="btn btn-primary">Submit</button>
+							  <button type="submit" class="btn btn-primary btn-lg btn-block">Log In</button>
 							</form>
+							  <hr>
+								<div class="text-center">
+									 <a href="{{ url_for('signup_form') }}" style="text-align: center">
+										 <button type="submit" class="btn btn-success btn-lg">Create New Account</button>
+									</a>
+								</div>
+
 						<!--main-->
 				</div>
 				
@@ -42,9 +52,8 @@
 				</div>
 			  </div>
 			 
-			</div>
-	
-		
+
+		 </div>
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
