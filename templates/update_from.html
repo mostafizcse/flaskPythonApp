@@ -66,8 +66,24 @@
 				  <input type="text" class="form-control" value="{{nage}}" id="Age"  placeholder="Age" name="Age">
 				</div>
 				<div class="form-group col-md-6">
-				  <label for="Sex">Gender</label>
-				  <input type="text" class="form-control" value="{{nsex}}"  id="Sex" placeholder="Sex" name="Sex">
+					<label for="inputState">Gender</label>
+				  <select id="inputState" name="Sex" class="form-control">
+
+
+					  <option selected value="{{nsex}}">{{nsex}}</option>
+					  <option value="Male">Male</option>
+					  <option value="Female">Female</option>
+					  <option value="Other">Other</option>
+
+
+
+				  </select>
+
+
+				 <!-- <label for="Sex">Gender</label>
+				  <input type="text" class="form-control" value="{{nsex}}"  id="Sex" placeholder="Sex" name="Sex">-->
+
+
 				</div>
 			  </div>
 

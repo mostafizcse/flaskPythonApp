@@ -1,7 +1,7 @@
 
 from flask import Flask, render_template,session, request, flash, url_for, redirect
 from flask_mysqldb import MySQL
-
+import base64
 
 #from wtforms import Form
 from mysqlx import Session
@@ -22,6 +22,16 @@ mysql = MySQL(app)
 def login():
      loginemail = request.form['Loginemail']
      loginpassword = request.form['Loginpassword']
+
+     ###Encoding###
+     # string to bytes
+
+     encoding = bytes(loginpassword, encoding='utf-8')
+     byte = base64.b64encode(encoding)
+     #byte to string
+     loginpassword = byte.decode()
+     print('encodaed',loginpassword)
+
      new = (loginemail,loginpassword)
      print('form data',new)
      cur = mysql.connection.cursor()
@@ -78,13 +88,6 @@ def home():
         return redirect(url_for('login_from'))
 
 
-
-
-
-
-
-
-
 #signup from
 @app.route('/signup_form')
 def signup_form():
@@ -98,6 +101,20 @@ def signup():
     email = request.form['Email1']
     password1 = request.form['PasswordOne']
     password2 = request.form['PasswordTwo']
+
+    #string to bytes using bytes()
+    b1 = bytes(password1, encoding='utf-8')
+    password1 = base64.b64encode(b1)
+
+    b2 = bytes(password2, encoding='utf-8')
+    password2 = base64.b64encode(b2)
+
+    print(password1)
+    print(password2)
+
+
+
+
     if(password1 == password2):
         cur = mysql.connection.cursor()
         cur.execute("INSERT INTO user_list(USER_NAME,EMAIL,PASSWORD1,PASSWORD2)VALUES (%s,%s,%s,%s)",
@@ -212,24 +229,22 @@ def update_form(id_data):
             print(rv)
             cur.close()
             id = int(rv[0][0])
-            print('id', id)
             first = rv[0][1]
             last = rv[0][2]
             father = rv[0][3]
             mother = rv[0][4]
-            position = rv[0][5]
-            emaill = rv[0][6]
-            phone = rv[0][7]
-            emergancy = rv[0][8]
-            age = rv[0][9]
-            sex = rv[0][10]
-            present = rv[0][11]
-            permanent = rv[0][12]
+            sex = rv[0][5]
+            position = rv[0][6]
+            emaill = rv[0][7]
+            present = rv[0][8]
+            permanent = rv[0][9]
+            age = rv[0][10]
+            phone = rv[0][11]
+            emergancy = rv[0][12]
             date = rv[0][13]
             account = rv[0][14]
             nid = rv[0][15]
             bank = rv[0][16]
-            print('target', nid, bank)
             return render_template('update_from.html', nfirst=first, nlast=last, nfather=father, nmother=mother, nposition=position, nemaill=emaill, nphone=phone, nemergancy=emergancy, nage=age, nsex=sex, npresent=present, npermanent=permanent, nid=id, ndate=date,naccount=account, nnid=nid, nbank=bank)
             # //End main code
 
